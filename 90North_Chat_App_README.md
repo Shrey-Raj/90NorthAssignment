@@ -15,7 +15,7 @@ This project combines a Django WebSocket server with a React client to deliver a
 - **Dashboard**: Manage pending and accepted users conveniently.  
 
 ## LOOKUP 
-<video controls src="LOOKUP/demo_django_chat_app.mp4" title=""></video>
+<video controls src="https://github.com/user-attachments/assets/68abd53c-f178-4064-9f27-0d62743ae531" title=""></video>
 
 ![alt text](<LOOKUP/Screenshot 2025-01-16 205740.png>)
 ![alt text](<LOOKUP/Screenshot 2025-01-16 205801.png>)
