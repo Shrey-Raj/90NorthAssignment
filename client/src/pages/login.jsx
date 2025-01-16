@@ -3,6 +3,9 @@ import axios from 'axios';
 import AuthService from '../services/auth.service'
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -13,21 +16,24 @@ function Login() {
         try {
             await AuthService.login(username, password).then(
                 () => {
-                    console.log(localStorage.user);
+                    toast.success("Login successful!");
                     navigate("/dashboard");
                     window.location.reload();
                 },
                 (error) => {
+                    toast.error("Login failed! Please check your credentials.");
                     console.log(error);
                 }
             );
         } catch (err) {
+            toast.error("An error occurred!");
             console.log(err);
         }
     };
 
     return (
         <div className="App">
+            <ToastContainer />
             <section class="vh-100" styleclass="background-color: #eee;">
                 <div class="container h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">

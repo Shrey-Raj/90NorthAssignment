@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Import the fonts */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Sora:wght@100..800&display=swap');
+
+/* Define Quicksand font family with weights 300 to 700 */
+.quicksand {
+  font-family: 'Quicksand', sans-serif;
+}
+
+.quicksand-light {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+}
+
+.quicksand-regular {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 400;
+}
+
+.quicksand-medium {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.quicksand-bold {
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+/* Define Sora font family with weights 100 to 800 */
+.sora {
+  font-family: 'Sora', sans-serif;
+}
+
+.sora-thin {
+  font-family: 'Sora', sans-serif;
+  font-weight: 100;
+}
+
+.sora-extra-light {
+  font-family: 'Sora', sans-serif;
+  font-weight: 200;
+}
+
+.sora-light {
+  font-family: 'Sora', sans-serif;
+  font-weight: 300;
+}
+
+.sora-regular {
+  font-family: 'Sora', sans-serif;
+  font-weight: 400;
+}
+
+.sora-medium {
+  font-family: 'Sora', sans-serif;
+  font-weight: 500;
+}
+
+.sora-semibold {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+}
+
+.sora-bold {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+}
+
+.sora-extra-bold {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+}

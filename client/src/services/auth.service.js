@@ -2,36 +2,30 @@ import axios from "axios";
 
 const API_URL = "http://127.0.0.1:8000/api";
 
-const signup = (email, password) => {
-    return axios
-        .post(API_URL + "/signup", {
+const signup = async (username, email, password) => {
+    const response = await axios
+        .post(API_URL + "/signup/", {
+            username,
             email,
             password,
-        })
-        .then((response) => {
-            if (response.data.accessToken) {
-                localStorage.setItem("user", JSON.stringify(response.data));
-            }
-
-            return response.data;
         });
+    if (response.data.access) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data;
 };
 
-const login = (username, password) => {
-    return axios
+const login = async (username, password) => {
+    const response = await axios
         .post(API_URL + "/login/", {
             username,
             password,
-        })
-        .then((response) => {
-            if (response.data.access) {
-                // console.log("Data is here?", response.data)
-
-                localStorage.setItem("user", JSON.stringify(response.data));
-            }
-            // console.log(response.data.access )
-            return response.data;
         });
+    if (response.data.access) {
+        // console.log("Data is here?", response.data)
+        localStorage.setItem("user", JSON.stringify(response.data));
+    }
+    return response.data;
 };
 
 const logout = () => {

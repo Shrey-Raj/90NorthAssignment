@@ -29,8 +29,13 @@ class SignupView(APIView):
     def post(self, request):
         serializer = UserSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data, status=status.HTTP_201_CREATED)
+            user = serializer.save()  # Save the user instance
+            refresh = RefreshToken.for_user(user)  # Generate tokens
+            return Response({
+                'user': serializer.data,
+                'refresh': str(refresh),
+                'access': str(refresh.access_token)
+            }, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 #2. Login 
@@ -47,7 +52,7 @@ class LoginView(APIView):
             return Response({
                 'refresh': str(refresh),
                 'access': str(refresh.access_token),
-                'usename': str(username),
+                'username': str(username),
                 'user_id' : user.id,
                 'email': user.email
             })
